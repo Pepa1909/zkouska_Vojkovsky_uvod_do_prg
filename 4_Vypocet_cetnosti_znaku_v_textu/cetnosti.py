@@ -1,11 +1,16 @@
-slovnik = {}
-slovo = "rozmaryn"
+# Úvod
+print("Dobrý den, tento jednoduchý program umí vypočítat četnost všech znaků v zadaném textu.")
 
-for pismeno in slovo:
-    if pismeno in slovnik:
-        slovnik[pismeno] += 1
+slovo = input("Zadejte text ke zpracování: ")
+
+slovnik = {}
+
+# For cyklus projede každý znak v textu.
+# Pokud znak ve slovníku je, započítá ho a pokud se znak obejví poprvé, vytvoří si ho jako novou hodnotu
+for znak in slovo:
+    if znak in slovnik:
+        slovnik[znak] += 1
     else:
-        slovnik[pismeno] = 1
-# for klic, hodnota in slovnik.items():
-#     print(f"slovo {slovo} obsahuje písmeno {klic} {hodnota}-krát")
+        slovnik[znak] = 1
+
 print(slovnik)

@@ -1,6 +1,9 @@
 from turtle import forward, left, exitonclick, right, speed, setpos, up, down
 
 def vlocka(uroven, delka): 
+
+    """Nakreslí Kochovu vločku zadané úrovně."""
+
     if uroven == 0:
         forward(delka)
         return
@@ -12,11 +15,19 @@ def vlocka(uroven, delka):
     left(60)
     vlocka(uroven-1,delka/3)
 
+print("Dobrý den, tento program nakreslí Kochovu vločku. Úroveň i velikost si budete moci zvolit.")
+
+uroven = int(input("Zadejte úroveň Kochovy vločky, kterou chcete vykreslit: "))
+velikost = int(input("Zadejte velikost Kochovy vločky (doporučená velikost je 200-500): "))
+
+# Změna rychlosti, aby se vločka kreslila co nejrychleji a také změna výchozích souřadnic, aby větší vločky nebyly mimo monitor
 speed(0)
 up()
 setpos(-200,100)
 down()
+
+# For cyklus zaručující, že vzniklý tvar bude opravdu vločka
 for _ in range(3):
-    vlocka(3,350)
+    vlocka(uroven,velikost)
     right(120)
 exitonclick()
