@@ -2,7 +2,7 @@ from turtle import forward, left, exitonclick, right, speed, setpos, up, down
 
 def vlocka(uroven, delka): 
 
-    """Nakreslí Kochovu vločku zadané úrovně."""
+    """Nakreslí Kochovu vločku zadané úrovně a zadaného rozměru."""
 
     if uroven == 0:
         forward(delka)
@@ -18,7 +18,7 @@ def vlocka(uroven, delka):
 print("Dobrý den, tento program nakreslí Kochovu vločku. Úroveň i velikost si budete moci zvolit.")
 
 uroven = int(input("Zadejte úroveň Kochovy vločky, kterou chcete vykreslit: "))
-velikost = int(input("Zadejte velikost Kochovy vločky (doporučená velikost je 200-500): "))
+velikost = float(input("Zadejte velikost Kochovy vločky (doporučená velikost je 200-500): "))
 
 # Změna rychlosti, aby se vločka kreslila co nejrychleji a také změna výchozích souřadnic, aby větší vločky nebyly mimo monitor
 speed(0)
