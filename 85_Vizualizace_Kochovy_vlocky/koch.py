@@ -17,7 +17,7 @@ def vlocka(uroven, delka):
 
 print("Dobrý den, tento program nakreslí Kochovu vločku. Úroveň i velikost si budete moci zvolit.")
 
-uroven = int(input("Zadejte úroveň Kochovy vločky, kterou chcete vykreslit: "))
+uroven = int(input("Zadejte úroveň Kochovy vločky, kterou chcete vykreslit (úroveň vyšší než 4 již trvá dlouho): "))
 velikost = float(input("Zadejte velikost Kochovy vločky (doporučená velikost je 200-500): "))
 
 # Změna rychlosti, aby se vločka kreslila co nejrychleji a také změna výchozích souřadnic, aby větší vločky nebyly mimo monitor
