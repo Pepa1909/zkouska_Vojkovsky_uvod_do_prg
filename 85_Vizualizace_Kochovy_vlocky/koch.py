@@ -1,10 +1,11 @@
 from PIL import Image, ImageDraw
 from math import sqrt
 
-# Main function, that uses recursion to draw every part of the snwoflake
+# Main function, that uses recursion to draw every part of the snowflake
 def koch(x1, y1, x2, y2, number_of_iterations, draw):
 
     """Draws a Koch snowflake with a number of desired iterations"""
+
     # Recursion ending condition
     if number_of_iterations > 0:
 # Side 1
@@ -23,15 +24,17 @@ def koch(x1, y1, x2, y2, number_of_iterations, draw):
 
 im = Image.new("RGB", (800, 650), color="white")
 draw = ImageDraw.Draw(im)
-length = 550
-iterations = int(input("Zvolte úroveň Kochovy vločky (doporučená maximální úroveň je 6): "))
+LENGTH = 550
+BASE_X = 100
+BASE_Y = 160
+iterations = int(input("Type your desired number of iterations (max. 6 recommended): "))
 
 # Draws the upper side of the snowflake
-koch(100, 160, length + 100, 160, iterations, draw)
+koch(BASE_X, BASE_Y, LENGTH + BASE_X, BASE_Y, iterations, draw)
 
 # Draws the right side of the snowflake
-koch(100 + length, 160, length/2 + 100, 160 + length * sqrt(3) / 2, iterations, draw)
+koch(BASE_X + LENGTH, BASE_Y, LENGTH/2 + BASE_X, BASE_Y + LENGTH * sqrt(3) / 2, iterations, draw)
 
 # Draws the left side of the snowflake
-koch(100 + 0.5 * length, 160 + length * sqrt(3) / 2, 100, 160, iterations, draw)
+koch(BASE_X + 0.5 * LENGTH, BASE_Y + LENGTH * sqrt(3) / 2, BASE_X, BASE_Y, iterations, draw)
 im.show()
